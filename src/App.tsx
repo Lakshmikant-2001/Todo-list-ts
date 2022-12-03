@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import TodoForm from "./components/TodoForm";
+import TodoContainer from "./components/TodoContainer";
 
 function App() {
   const [todoList, setTodoList] = useState<string[]>([]);
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <main className="px-3 py-5">
         <TodoForm addTodo={addTodo} />
+        <TodoContainer todoList={todoList} />
       </main>
     </div>
   );
