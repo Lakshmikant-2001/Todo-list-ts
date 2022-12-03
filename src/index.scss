@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+//override variable
+$font-family-base: "Source Sans Pro", sans-serif;
+
+//import bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
