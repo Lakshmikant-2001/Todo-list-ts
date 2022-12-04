@@ -5,9 +5,17 @@ import TodoContainer from "./components/TodoContainer";
 import { Todo } from "./appTypes";
 
 function App() {
-  const [todoList, setTodoList] = useState<Todo[]>([]);
+  const LocalTodos = localStorage.getItem("todoList");
+  const initalState: Todo[] = (typeof (LocalTodos) === 'string') ?
+    JSON.parse(LocalTodos) : [];
+
+  const [todoList, setTodoList] = useState<Todo[]>(initalState);
   const [filterOption, setFilterOption] = useState("1");
   const [filteredTodoList, setFilteredTodoList] = useState<Todo[]>(todoList);
+
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList])
 
   useEffect(() => {
     filterTodo(filterOption);
@@ -61,9 +69,9 @@ function App() {
     <div className="App">
       <Header />
       <main className="px-3 py-5">
-        <TodoForm 
-          addTodo={addTodo} 
-          changeFilter={changeFilter} 
+        <TodoForm
+          addTodo={addTodo}
+          changeFilter={changeFilter}
         />
         <TodoContainer
           todoList={filteredTodoList}

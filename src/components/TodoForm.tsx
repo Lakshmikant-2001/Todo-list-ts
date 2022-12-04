@@ -23,6 +23,7 @@ function TodoForm({ addTodo, changeFilter }: Props) {
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     changeFilter(e.target.value);
+    setTodo("");
   };
 
   return (

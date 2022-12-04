@@ -14,5 +14,6 @@ export const CONSTANTS = {
   TodoContainer: {
     DeleteBtnLabel: "Delete",
     CompleteBtnLabel: "Complete",
+    NoTodoText: "No todos in this filter...",
   },
 };
