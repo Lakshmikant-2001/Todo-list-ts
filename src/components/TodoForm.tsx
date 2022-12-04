@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoIosAddCircle } from "react-icons/io";
 import { CONSTANTS } from "../constants";
 
 interface Props {
@@ -38,9 +39,9 @@ function TodoForm({ addTodo, changeFilter }: Props) {
         />
         <button
           type="submit"
-          className="btn btn-primary btn-sm text-white px-3"
+          className="btn btn-sm btn-primary bg-transparent border-0"
         >
-          {constants.SubmitBtnLabel}
+          <IoIosAddCircle className="fs-3 text-primary" />
         </button>
         <select className="form-select mx-2" onChange={handleFilterChange}>
           <option value="1">{constants.Filter.Option1}</option>

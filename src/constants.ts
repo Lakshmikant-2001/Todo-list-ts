@@ -4,7 +4,6 @@ export const CONSTANTS = {
   },
   TodoForm: {
     InputPlaceholder: "add your todo...",
-    SubmitBtnLabel: "Add",
     Filter: {
       Option1: "all",
       Option2: "pending",

@@ -15,10 +15,18 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("todoList", JSON.stringify(todoList));
-  }, [todoList])
+  }, [todoList]);
 
   useEffect(() => {
-    filterTodo(filterOption);
+    switch (filterOption) {
+      case "2":
+        setFilteredTodoList(todoList.filter((todo) => todo.isCompleted === false));
+        break;
+      case "3":
+        setFilteredTodoList(todoList.filter((todo) => todo.isCompleted === false));
+        break;
+      default: setFilteredTodoList(todoList);
+    }
   }, [todoList, filterOption]);
 
   const addTodo = (todo: string) => {
@@ -47,22 +55,6 @@ function App() {
 
   const changeFilter = (option: string) => {
     setFilterOption(option);
-  };
-
-  const filterTodo = (option: string) => {
-    if (option === "1") {
-      setFilteredTodoList(todoList);
-    }
-    if (option === "2") {
-      setFilteredTodoList(
-        todoList.filter((todo) => todo.isCompleted === false)
-      );
-    }
-    if (option === "3") {
-      setFilteredTodoList(
-        todoList.filter((todo) => todo.isCompleted === true)
-      );
-    }
   };
 
   return (
