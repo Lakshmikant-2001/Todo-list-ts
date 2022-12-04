@@ -1,9 +1,13 @@
-export const constants = {
+export const CONSTANTS = {
   Header: {
     AppTitle: "Todo List",
   },
   TodoForm: {
-    inputPlaceholder: "add your todo...",
-    submitBtnLabel: "Add",
+    InputPlaceholder: "add your todo...",
+    SubmitBtnLabel: "Add",
+  },
+  TodoContainer: {
+    DeleteBtnLabel: "Delete",
+    CompleteBtnLabel: "Complete",
   },
 };

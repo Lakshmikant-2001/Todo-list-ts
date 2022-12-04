@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { constants } from "../constants";
+import { CONSTANTS } from "../constants";
 
 interface Props {
   addTodo: (todo: string) => void;
 }
 
 function TodoForm({ addTodo }: Props) {
-  const TodoFormConstants = constants.TodoForm;
+  const constants = CONSTANTS.TodoForm;
   const [todo, setTodo] = useState("");
 
   const handleInpChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,14 +27,14 @@ function TodoForm({ addTodo }: Props) {
           type="text"
           className="form-control"
           value={todo}
-          placeholder={TodoFormConstants.inputPlaceholder}
+          placeholder={constants.InputPlaceholder}
           onChange={handleInpChange}
         />
         <button
           type="submit"
           className="btn btn-primary btn-sm text-white px-3"
         >
-          {TodoFormConstants.submitBtnLabel}
+          {constants.SubmitBtnLabel}
         </button>
       </div>
     </form>
