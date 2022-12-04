@@ -3,9 +3,10 @@ import { CONSTANTS } from "../constants";
 
 interface Props {
   addTodo: (todo: string) => void;
+  changeFilter: (option: string) => void;
 }
 
-function TodoForm({ addTodo }: Props) {
+function TodoForm({ addTodo, changeFilter }: Props) {
   const constants = CONSTANTS.TodoForm;
   const [todo, setTodo] = useState("");
 
@@ -20,12 +21,16 @@ function TodoForm({ addTodo }: Props) {
     setTodo("");
   };
 
+  const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    changeFilter(e.target.value);
+  };
+
   return (
     <form action="" onSubmit={handleFormSubmit}>
-      <div className="input-group w-50 mx-auto">
+      <div className="input-group mx-auto w-50">
         <input
           type="text"
-          className="form-control"
+          className="form-control w-50"
           value={todo}
           placeholder={constants.InputPlaceholder}
           onChange={handleInpChange}
@@ -36,6 +41,11 @@ function TodoForm({ addTodo }: Props) {
         >
           {constants.SubmitBtnLabel}
         </button>
+        <select className="form-select mx-2" onChange={handleFilterChange}>
+          <option value="1">{constants.Filter.Option1}</option>
+          <option value="2">{constants.Filter.Option2}</option>
+          <option value="3">{constants.Filter.Option3}</option>
+        </select>
       </div>
     </form>
   );

@@ -5,6 +5,11 @@ export const CONSTANTS = {
   TodoForm: {
     InputPlaceholder: "add your todo...",
     SubmitBtnLabel: "Add",
+    Filter: {
+      Option1: "all",
+      Option2: "pending",
+      Option3: "completed",
+    },
   },
   TodoContainer: {
     DeleteBtnLabel: "Delete",
