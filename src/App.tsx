@@ -23,7 +23,7 @@ function App() {
         setFilteredTodoList(todoList.filter((todo) => todo.isCompleted === false));
         break;
       case "3":
-        setFilteredTodoList(todoList.filter((todo) => todo.isCompleted === false));
+        setFilteredTodoList(todoList.filter((todo) => todo.isCompleted === true));
         break;
       default: setFilteredTodoList(todoList);
     }
